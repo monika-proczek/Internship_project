@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Episode_has_to_have_series_assigned</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( 
+   AND( 
+      ISBLANK(TV_Series__c), 
+            RecordType.DeveloperName = &apos;Series_Episode&apos; 
+      ), 
+TRUE, FALSE)</errorConditionFormula>
+    <errorDisplayField>TV_Series__c</errorDisplayField>
+    <errorMessage>Series Episode has to have TV Series assigned to it.</errorMessage>
+</ValidationRule>

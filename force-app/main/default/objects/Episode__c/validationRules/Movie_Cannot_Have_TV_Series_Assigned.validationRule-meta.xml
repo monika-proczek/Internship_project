@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Movie_Cannot_Have_TV_Series_Assigned</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND(
+ NOT(ISBLANK(TV_Series__c)) ,
+RecordType.DeveloperName = &apos;Movie&apos;
+),
+TRUE, FALSE)</errorConditionFormula>
+    <errorDisplayField>TV_Series__c</errorDisplayField>
+    <errorMessage>Movie cannot have TV series assigned</errorMessage>
+</ValidationRule>
