@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="https://soap.sforce.com/2006/04/metadata">
+    <masterLabel>SeasonSelected</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass Selected Season</description>
+    <lightningMessageFields>
+        <fieldName>seasonRecordId</fieldName>
+        <description>This is the record that is selected</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

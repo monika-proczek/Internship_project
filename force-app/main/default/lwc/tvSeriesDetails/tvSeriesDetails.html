@@ -1,0 +1,15 @@
+<template>
+    <template lwc:if={isTvSeriesAvaiable}>
+        <lightning-card variant="Narrow" title={singleTvSeries.Name}>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-p-horizontal_small">
+                    <p class="slds-p-horizontal_small">Category: {singleTvSeries.Category__c}</p>
+                    <p class="slds-p-horizontal_small">Description: {singleTvSeries.Description__c}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                    <c-season-combobox series={singleTvSeries.Id}></c-season-combobox>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>
