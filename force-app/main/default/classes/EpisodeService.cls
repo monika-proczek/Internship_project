@@ -8,10 +8,10 @@ public with sharing class EpisodeService {
     }
 
     public static List<Episode__c> getMovies() {
-        return [SELECT Id, Name, Category__c, Description__c FROM Episode__c WHERE RecordType.DeveloperName = 'Movie' ORDER BY Name];
+        return [SELECT Id, Name, Category__c, Description__c, Picture_URL__c FROM Episode__c WHERE RecordType.DeveloperName = 'Movie' ORDER BY Name];
     }
 
     public static Episode__c getMovie() {
-        return [SELECT Id, Name, Category__c, Description__c FROM Episode__c WHERE RecordType.DeveloperName = 'Movie'];
+        return [SELECT Id, Name, Category__c, Description__c, Picture_URL__c FROM Episode__c WHERE RecordType.DeveloperName = 'Movie'];
     }
 }
