@@ -1,10 +1,10 @@
 <template>
-    <div class="slds-card slds-var-p-around_small">
+    <div class="slds-card slds-var-p-around_small" >
         <template lwc:if={tvSeriesList}>
 
             <div class="slds-grid slds-wrap">
                 <template for:each={tvSeriesList} for:item="series">
-                    <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-horizontal_small" key={series.Id}>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-horizontal_small" key={series.Id} onclick={handleTileClicked} data-id={series.Id}>
                     <c-tv-series-single-card series={series}  class="slds-col slds-var-m-around_xx-small"></c-tv-series-single-card>
                     </div>
                 </template>

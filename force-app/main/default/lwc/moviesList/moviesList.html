@@ -4,7 +4,7 @@
 
             <div class="slds-grid slds-wrap">
                 <template for:each={moviesList} for:item="movie">
-                    <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-horizontal_small" key={movie.Id}>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-p-horizontal_small" key={movie.Id} onclick={handleTileClicked} data-id={movie.Id}>
                     <c-movie-single-card movie={movie}  class="slds-col slds-var-m-around_xx-small"></c-movie-single-card>
                     </div>
                 </template>

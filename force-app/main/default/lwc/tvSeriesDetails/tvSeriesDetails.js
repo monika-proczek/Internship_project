@@ -1,8 +1,9 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 import getSingleTVSeries from '@salesforce/apex/FilmListViewController.getSingleTVSeries';
 
 export default class TvSeriesDetails extends LightningElement {
     @track singleTvSeries;
+    @api recordId;
 
     connectedCallback() {
         this.getOneTVSeries();
@@ -11,9 +12,9 @@ export default class TvSeriesDetails extends LightningElement {
     get isTvSeriesAvaiable() {
         return !!this.singleTvSeries;
     }
-    //TO DO: tvSeriesId replace with actually Id 
+
     async getOneTVSeries() {
-        getSingleTVSeries({tvSeriesId: 'a03d2000001t3RJAAY'})
+        getSingleTVSeries({tvSeriesId: this.recordId})
             .then(result => {
                 this.singleTvSeries = result
             })
