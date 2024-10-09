@@ -15,8 +15,10 @@ static void makeData(){
     @isTest
     private static void testGetSingleTVSeries() {
         TV_Series__c  series = TestDataFactory.createSingleTVSeries('Test Series 2', 'Comedy');
-        TVSeriesService.getSingleTVSeries(series.Id);
-        Assert.areEqual('Test Series 2',series.Series_Name__c );
+        TV_Series__c testSeries = TVSeriesService.getSingleTVSeries(series.Id);
+        List<TV_Series__c> topSeries = TVSeriesService.getTopRatedSeries();
+        Assert.areEqual('Test Series 2',testSeries.Series_Name__c );
+        Assert.areEqual(2,topSeries.size() );
     }
     
 }
