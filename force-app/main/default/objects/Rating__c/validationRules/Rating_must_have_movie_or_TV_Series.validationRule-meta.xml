@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rating_must_have_movie_or_TV_Series</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(   AND(ISBLANK(TV_Series__c),ISBLANK(Movie__c)) , AND(NOT (ISBLANK(TV_Series__c)),NOT(ISBLANK(Movie__c))))</errorConditionFormula>
+    <errorMessage>Rating must have populated TV series OR Movie</errorMessage>
+</ValidationRule>

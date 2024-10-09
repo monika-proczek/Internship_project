@@ -1,6 +1,7 @@
 import { LightningElement, track, api } from 'lwc';
 import getSingleTVSeries from '@salesforce/apex/FilmListViewController.getSingleTVSeries';
 
+
 export default class TvSeriesDetails extends LightningElement {
     @track singleTvSeries;
     @api recordId;
@@ -13,6 +14,10 @@ export default class TvSeriesDetails extends LightningElement {
         return !!this.singleTvSeries;
     }
 
+    get backgroundImageStyle() {
+        return `background-image:url(${this.singleTvSeries.Picture_URL__c})`;
+    }
+
     async getOneTVSeries() {
         getSingleTVSeries({tvSeriesId: this.recordId})
             .then(result => {
@@ -22,5 +27,5 @@ export default class TvSeriesDetails extends LightningElement {
                 console.log(error)
             })
     }
-}
 
+}

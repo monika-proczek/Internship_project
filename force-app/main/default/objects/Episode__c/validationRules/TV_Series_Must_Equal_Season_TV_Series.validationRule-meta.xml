@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TV_Series_Must_Equal_Season_TV_Series</fullName>
+    <active>true</active>
+    <errorConditionFormula>Season__r.TV_Series__c  &lt;&gt;  TV_Series__c</errorConditionFormula>
+    <errorDisplayField>TV_Series__c</errorDisplayField>
+    <errorMessage>TV series for episode must be the same as TV series of related season</errorMessage>
+</ValidationRule>

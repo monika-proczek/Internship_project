@@ -1,0 +1,43 @@
+<template>
+    <div class="slds-grid slds-grid_vertical slds-m-vertical_xxx-small">
+        <div class="slds-col">
+            <template lwc:if={currentRating}>
+                <div class="slds-align_left ">
+                    <p><strong>Your current rating for this series is: {currentRating}, if you want you can update it.</strong></p>
+                </div>
+            </template>
+        </div>
+        <div class="slds-col">
+            <div class="rate">
+                <input type="radio" id="star15" name={name} value="5" onclick={handleStarClick} />
+                <label for="star15" title="text">5 stars</label>
+                <input type="radio" id="star14" name={name} value="4" onclick={handleStarClick} />
+                <label for="star14" title="text">4 stars</label>
+                <input type="radio" id="star13" name={name} value="3" onclick={handleStarClick} />
+                <label for="star13" title="text">3 stars</label>
+                <input type="radio" id="star12" name={name} value="2" onclick={handleStarClick} />
+                <label for="star12" title="text">2 stars</label>
+                <input type="radio" id="star11" name={name} value="1" onclick={handleStarClick} />
+                <label for="star11" title="text">1 star</label>
+            </div>
+        </div>
+        <div class="slds-col">
+            <lightning-button label="Submit Review" title="Non-primary action" onclick={submitReview} class="slds-m-left_x-small"></lightning-button>
+        </div>
+      </div>
+
+
+    <!-- <lightning-layout class="slds-p-around_small">
+     
+           
+            <lightning-layout-item>
+              
+              
+               
+            </lightning-layout-item>
+    </lightning-layout> -->
+    
+</template>
+<!-- 
+<div class="slds-grid slds-wrap rate">
+    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12"> -->

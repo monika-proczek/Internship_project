@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_positive_integers</fullName>
+    <active>true</active>
+    <errorConditionFormula>Season_number__c &lt; 1</errorConditionFormula>
+    <errorDisplayField>Season_number__c</errorDisplayField>
+    <errorMessage>Season number must be positive number.</errorMessage>
+</ValidationRule>

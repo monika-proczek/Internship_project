@@ -21,6 +21,10 @@ export default class SeasonCombobox extends LightningElement {
 
     }
 
+    get seasonsPicklistOptionsAvaiable() {
+        return this.seasonsPicklistOptions.length && this.seasonsPicklistOptions.length > 0;
+    }
+
     async getSeasons() {
         getSeasonsPerTVSeries({tvSeriesId: this.series})
             .then(result => {
@@ -39,5 +43,3 @@ export default class SeasonCombobox extends LightningElement {
         }
 
 }
-
-

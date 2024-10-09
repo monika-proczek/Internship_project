@@ -9,6 +9,20 @@
                     </div>
                 </template>
             </div>
+            <lightning-layout class="slds-p-around_small">
+                <div class="slds-align_absolute-center">
+                    <lightning-layout-item>
+                        <lightning-button label="Previous" icon-name="utility:chevronleft" data-type="previous"
+                            onclick={handlePrevious} disabled={disablePrevious}>
+                        </lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="grow" class="slds-p-left_medium slds-p-right_medium">Page {pageNumber} of {totalPage}</lightning-layout-item>
+                    <lightning-layout-item>
+                        <lightning-button label="Next" icon-name="utility:chevronright" data-type="next"
+                            icon-position="right" onclick={handleNext} disabled={disableNext}></lightning-button>
+                    </lightning-layout-item>
+                </div>
+            </lightning-layout>
 
         </template>
     </div>

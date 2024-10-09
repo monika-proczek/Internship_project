@@ -30,7 +30,22 @@ public with sharing class FilmListViewController {
     }
 
     @AuraEnabled
-    public static Episode__c getMovie(){
-        return EpisodeService.getMovie();
+    public static Episode__c getMovie(Id movieId){
+        return EpisodeService.getMovie(movieId);
+    }
+
+    @AuraEnabled
+    public static void createNewRating(String stars, Id seriesId){
+         RatingService.createNewRating(stars, seriesId);
+    }
+
+    @AuraEnabled
+    public static  List<TV_Series__c> getTopSeries(){
+        return TVSeriesService.getTopRatedSeries();
+    }
+
+    @AuraEnabled
+    public static String getCurrentRating(Id seriesId){
+         return RatingService.checkExistingScore(seriesId);
     }
 }

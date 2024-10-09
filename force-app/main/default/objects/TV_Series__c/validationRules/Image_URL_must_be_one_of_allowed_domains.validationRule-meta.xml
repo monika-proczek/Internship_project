@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Image_URL_must_be_one_of_allowed_domains</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(BEGINS(Picture_URL__c, &quot;https://wallpapers.com/images&quot;)),
+    NOT(BEGINS(Picture_URL__c, &quot;https://cdn.pixabay.com/photo&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Picture_URL__c</errorDisplayField>
+    <errorMessage>Image must be hosted on one of the allowed domains and point to the direct image.</errorMessage>
+</ValidationRule>
