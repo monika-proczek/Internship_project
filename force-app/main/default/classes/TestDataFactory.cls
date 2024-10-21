@@ -2,7 +2,7 @@
 public class TestDataFactory {
     public static TV_Series__c createSingleTVSeries(String seriesName, String seriesCategory) {
         List<TV_Series__c> listOfTVSeries = new List<TV_Series__c>();
-        TV_Series__c newTVSeries = new TV_Series__c(Series_Name__c = seriesName,
+        TV_Series__c newTVSeries = new TV_Series__c(Name = seriesName,
         Picture_URL__c = 'https://wallpapers.com/images/high/ftestickers-black-circle-lines-scribbles-abstract-crazy-line-hd-png-download-ckk3wyb5ujs1hj5e.png',
         Category__c = seriesCategory);
         insert newTVSeries;

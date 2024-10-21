@@ -13,6 +13,10 @@ export default class MovieDetails extends LightningElement {
         return !!this.singleMovie;
     }
     
+    get backgroundImageStyle() {
+        return `background-image:url(${this.singleMovie.Picture_URL__c})`;
+    }
+
     async getOneMovie() {
         getMovie({movieId: this.recordId})
         .then(result => {

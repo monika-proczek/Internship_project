@@ -12,7 +12,7 @@ const columns = [
 
 export default class EpisodesDatatable extends LightningElement {
 
-    @api recordsPerPage = 4;
+    @api recordsPerPage = 10;
     columns = columns;
     @track showLoading = false;
     @api lastEpisodeNumber;

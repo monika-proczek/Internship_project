@@ -2,8 +2,6 @@ public class RatingSummaryBatch implements
 Database.Batchable<sObject>, Database.Stateful{
     
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        //we take datetime 24 hours ago
-        DateTime dayAgo = System.Now().AddDays(-1);
         return Database.getQueryLocator(
             'SELECT Id, Score__c FROM Rating__c WHERE CreatedDate = TODAY'
             );

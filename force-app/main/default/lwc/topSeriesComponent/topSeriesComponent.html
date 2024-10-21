@@ -1,21 +1,21 @@
 <template>
     <template lwc:if={seriesData}>
         <div class="slds-size_1-of-1 slds-large-size_2-of-3 slds-align_absolute-center">
-            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">3 top rated series
+            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
                 <lightning-carousel>
                     <lightning-carousel-image 
                         src={firstSeries.Picture_URL__c}
-                        header={firstSeries.Series_Name__c} description={firstDescription}
+                        header={firstSeries.Name} description={firstDescription}
                         alternative-text={firstDescription} href={firstURL}>
                     </lightning-carousel-image>
                     <lightning-carousel-image
                         src={secondSeries.Picture_URL__c}
-                        header={secondSeries.Series_Name__c} description={secondDescription}
+                        header={secondSeries.Name} description={secondDescription}
                         alternative-text={secondDescription} href={secondURL}>
                     </lightning-carousel-image>
                     <lightning-carousel-image
                        src={thirdSeries.Picture_URL__c}
-                        header={thirdSeries.Series_Name__c} description={thridDescription}
+                        header={thirdSeries.Name} description={thridDescription}
                         alternative-text={thridDescription} href={thirdURL}>
                     </lightning-carousel-image>
                 </lightning-carousel>

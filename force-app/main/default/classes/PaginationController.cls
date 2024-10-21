@@ -31,13 +31,13 @@ public with sharing class PaginationController {
         List<TV_Series__c> seriesList = new List<TV_Series__c>();
         if (buttonTypeNext == true) {
             // Fetch records with number greater than the lastEpisodeNumber
-            seriesList = [SELECT Id, Series_Name__c, Category__c, Description__c, Trailer_URL__c, Picture_URL__c  FROM TV_Series__c WHERE Id > :lastId ORDER BY Id ASC LIMIT :recordsLimit];
+            seriesList = [SELECT Id, Name, Category__c, Description__c, Trailer_URL__c, Picture_URL__c  FROM TV_Series__c WHERE Id > :lastId ORDER BY Id ASC LIMIT :recordsLimit];
         } else if (buttonTypePrevious == true) {
             // Fetch records with number less than the firstEpisodeNumber
-            seriesList = [SELECT Id, Series_Name__c, Category__c, Description__c, Trailer_URL__c, Picture_URL__c  FROM TV_Series__c WHERE Id < :firstId ORDER BY Id DESC LIMIT :recordsLimit];
+            seriesList = [SELECT Id, Name, Category__c, Description__c, Trailer_URL__c, Picture_URL__c  FROM TV_Series__c WHERE Id < :firstId ORDER BY Id DESC LIMIT :recordsLimit];
         } else {
             // Fetch the first page of records
-            seriesList = [SELECT Id, Series_Name__c, Category__c, Description__c, Trailer_URL__c, Picture_URL__c  FROM TV_Series__c ORDER BY Id ASC LIMIT :recordsLimit];
+            seriesList = [SELECT Id, Name, Category__c, Description__c, Trailer_URL__c, Picture_URL__c  FROM TV_Series__c ORDER BY Id ASC LIMIT :recordsLimit];
         }
         if (!seriesList.isEmpty()) {
             return seriesList;
